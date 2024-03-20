@@ -7,108 +7,32 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
-
     <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:text=""
-            android:ems="10"
-            android:id="@+id/tvPrimeiroValor"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textPV" app:layout_constraintHorizontal_bias="0.467"/>
-    <Button
-            android:id="@+id/btnSubt"
-            android:text="-"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="104dp" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvSegundoValor"/>
-    <TextView
-            android:text="Digite o primeiro valor:"
-            android:textSize="20dp"
-            android:layout_width="205dp"
-            android:layout_height="28dp"
-            android:id="@+id/textPV"
+            android:id="@+id/tv_valorinicial"
+            android:layout_width="288dp"
+            android:layout_height="49dp"
+            android:hint="Valor Inicial"
+            android:inputType="numberDecimal"
             app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.48" app:layout_constraintVertical_bias="0.219"/>
-    <TextView
-            android:text="Digite o segundo valor:"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textSV"
-            app:layout_constraintTop_toBottomOf="@+id/tvPrimeiroValor"
-            android:layout_marginTop="36dp" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
-    <TextView
-            android:text="Resultado:"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textResult"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.759"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text"
-            android:text=""
-            android:ems="10"
-            android:id="@+id/tvResultado"
-            android:layout_marginTop="9dp"
-            app:layout_constraintTop_toBottomOf="@+id/textResult" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.495" app:layout_constraintVertical_bias="0.309"/>
+    <Button
+            android:id="@+id/btn_contador"
+            android:layout_width="170dp"
+            android:layout_height="48dp"
+            android:text="Iniciar Contador"
+            android:onClick="startCounter"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintHorizontal_bias="0.502" app:layout_constraintVertical_bias="0.172"/>
+            app:layout_constraintHorizontal_bias="0.506" app:layout_constraintVertical_bias="0.612"/>
     <Button
-            android:id="@+id/btnMulti"
-            android:text="x"
-            android:textSize="20dp"
+            android:id="@+id/btn_calculadora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="108dp"
-            android:layout_marginTop="16dp" app:layout_constraintTop_toBottomOf="@+id/btnSoma"/>
-    <TextView
-            android:text="Calculadora :)"
-            android:textSize="30dp"
-            android:fontFamily="monospace"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView"
-            app:layout_constraintBottom_toTopOf="@+id/tvPrimeiroValor"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintVertical_bias="0.563"/>
-    <Button
-            android:id="@+id/btnDiv"
-            android:text="/"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/btnMulti"
-            app:layout_constraintHorizontal_bias="0.212" android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/btnSubt"/>
-    <Button
-            android:id="@+id/btnSoma"
-            android:text="+"
-            android:textSize="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toStartOf="@+id/btnSubt"
-            app:layout_constraintHorizontal_bias="0.824" android:layout_marginTop="28dp"
-            app:layout_constraintTop_toBottomOf="@+id/tvSegundoValor"/>
-    <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:text=""
-            android:ems="10"
-            android:id="@+id/tvSegundoValor"
-            android:layout_marginTop="16dp"
-            app:layout_constraintTop_toBottomOf="@+id/textSV" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.005"/>
+            android:text="Iniciar Calculadora"
+            android:onClick="startCalculator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

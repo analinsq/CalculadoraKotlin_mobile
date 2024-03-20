@@ -1,58 +1,40 @@
 package com.example.calculadora
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var contadorInicial: EditText
+    private lateinit var btnContador: Button
+    private lateinit var btnCalculadora: Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        
-        val num1 = findViewById(R.id.tvPrimeiroValor) as EditText
-        val num2 = findViewById(R.id.tvSegundoValor) as EditText
-        val tot = findViewById(R.id.tvResultado) as EditText
-        val bt1 = findViewById(R.id.btnSoma) as Button
-        val bt2 = findViewById(R.id.btnSubt) as Button
-        val bt3 = findViewById(R.id.btnMulti) as Button
-        val bt4 = findViewById(R.id.btnDiv) as Button
 
-        bt1.setOnClickListener{
-            val val1 = num1.text.toString().toFloat();
-            val val2 = num2.text.toString().toFloat();
+        contadorInicial = findViewById(R.id.tv_valorinicial)
+        btnContador = findViewById(R.id.btn_contador)
+        btnCalculadora = findViewById(R.id.btn_calculadora)
 
-            val result = val1 + val2
-
-            tot.setText(result.toString())
+        btnContador.setOnClickListener {
+            val valorInicial = contadorInicial.text.toString()
+            if (valorInicial.isNotEmpty()) {
+                val intent = Intent(this, CounterActivity::class.java)
+                intent.putExtra("valorInicial", valorInicial.toInt())
+                startActivity(intent)
+            }
+            else {
+                Toast.makeText(this, "Por favor, insira o valor inicial do contador", Toast.LENGTH_SHORT).show()
+            }
         }
 
-        bt2.setOnClickListener{
-            val val1 = num1.text.toString().toFloat();
-            val val2 = num2.text.toString().toFloat();
-
-            val result = val1 - val2
-
-            tot.setText(result.toString())
+        btnCalculadora.setOnClickListener {
+            startActivity(Intent(this, CalculatorActivity::class.java))
         }
-
-        bt3.setOnClickListener{
-            val val1 = num1.text.toString().toFloat();
-            val val2 = num2.text.toString().toFloat();
-
-            val result = val1 * val2
-
-            tot.setText(result.toString())
-        }
-
-        bt4.setOnClickListener{
-            val val1 = num1.text.toString().toFloat();
-            val val2 = num2.text.toString().toFloat();
-
-            val result = val1/val2
-
-            tot.setText(result.toString())
-        }
-
     }
 }
+
